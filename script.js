@@ -1,5 +1,6 @@
 /** 
   Helper Scripts for Google Spreadsheets used as sources for maps, e.g. https://github.com/jdalt/twin-cities-aid-distribution-locations/
+  Script available on GitHub at https://github.com/mc-funk/community-map-google-scripts/
   Open Tools > Script Editor in Google Sheets and then copy & paste script and edit items in USER-DEFINED CONSTANTS AND CHECKS section.
 */
 
@@ -85,8 +86,7 @@ function onEdit(e) {
     LOGIC TO INSERT LATITUDE AND LONGITUDE ON EDIT
     If change is to address column, update lat and long
     */
-     if (sh.getName() == 'Twin Cities Distribution Locations' &&
-         column == addressCol) {
+     if (column == addressCol) {
        // Must use the range.getValue() method as e.value does not reflect pasted values
        var newAddress = e.range.getValue();       
        if (!newAddress) return; 
@@ -99,7 +99,7 @@ function onEdit(e) {
        sh.getRange(row, lngColumn).setValue(long);
      }
   
-    /** LOGIC TO INSERT LATITUDE AND LONGITUDE ON EDIT 
+    /** 
     If change is to key data entry columns, update a timestamp 
     */
     if (!shouldTimestampUpdateByEditedCell(row, column)) return;
