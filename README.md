@@ -1,2 +1,2 @@
 # community-map-google-scripts
-Scripts to support spreadsheets that use community-generated information to map important points
+Script to support Google spreadsheets that use community-generated information to map important points, such as https://github.com/jdalt/twin-cities-aid-distribution-locations/. 
